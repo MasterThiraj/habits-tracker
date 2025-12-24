@@ -87,8 +87,8 @@ function checkDailyReset() {
 function calculatePoints() {
     const completedCount = habits.filter(h => h.completed).length;
     totalPoints = completedCount * POINTS_PER_HABIT;
-    totalPointsEl.textContent = `${totalPoints}/500`;
-
+    let maxPoints = habits.length * POINTS_PER_HABIT;
+    totalPointsEl.textContent = `${totalPoints}/${maxPoints}`;
     // Animate points change
     totalPointsEl.classList.add('scale-125');
     setTimeout(() => totalPointsEl.classList.remove('scale-125'), 300);
